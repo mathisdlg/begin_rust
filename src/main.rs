@@ -1,9 +1,9 @@
 use std::fmt; // Import `fmt`
 
-#[derive(Debug)]
+#[derive(Debug)] // Asks the compiler to auto-generate a suitable implementation of the Debug trait, which provides the result of {:?} in something like Person { name: "John", age: 8 };
 struct Matrix(f32, f32, f32, f32);
 
-impl fmt::Display for Matrix {
+impl fmt::Display for Matrix { // Implentation for printing matrix
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "({}, {}, {}, {})", self.0, self.1, self.2, self.3)
     }
